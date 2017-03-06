@@ -1,8 +1,13 @@
+# preprocessing
 import pandas as pd
 import sys
 
 def main():
-    all_csv = pd.read_csv("all.csv")
+    """
+    Metoda na pouzitie sliding window
+    """
+
+    all_csv = pd.read_csv("all2.csv")
     #print(all_csv)
 
     start = 0
@@ -10,21 +15,29 @@ def main():
 
     slidedataframe = pd.DataFrame()
 
+
     while (all_csv.size-1 > end):
-        tmp = all_csv.ix[start:end]
-        slidedataframe.append(tmp)
+        tmp = all_csv.ix[start:end,1:4]
+        movement = all_csv.ix[end,4]
+        userid = all_csv.ix[end,5]
+        tmp = tmp.stack().to_frame().T
+        #tmp.columns = ['{}_{}'.format(*c) for c in tmp.columns]
+        tmp['movement'] = movement
+        tmp['userid'] = userid
+
+        slidedataframe = slidedataframe.append(tmp)
         start += 1
         end += 1
-        #sys.stdout.write('.')
-        if (end % 1000 == 0):
+        if (end > 100):
+        #if (end > 100 == 0):
             print(end)
+            print(slidedataframe)
+            break
 
-    print(slidedataframe.shape)
+    # save to csv
 
 
-
-
-
+    #print(slidedataframe.shape)
 
 
 

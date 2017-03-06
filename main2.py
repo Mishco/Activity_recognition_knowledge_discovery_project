@@ -12,13 +12,10 @@ from matplotlib import pyplot as plt
 
 
 def example_one():
-<<<<<<< HEAD
     #path = "Activity Recognition from Single Chest-Mounted Accelerometer\\Activity Recognition from Single Chest-Mounted Accelerometer\\"
-    path = os.getcwd()+"\\"
-=======
-
+    #path = os.getcwd()+"\\"
     path = "Activity Recognition from Single Chest-Mounted Accelerometer\\Activity Recognition from Single Chest-Mounted Accelerometer\\"
->>>>>>> 1a288f3210871613e224df7bb3dacf78b0ce4ddc
+
     array = []
 
     for file in os.listdir(path):
@@ -30,8 +27,6 @@ def example_one():
             #pd1 = pd1.drop('id', 1)
             array.append(pd1)
 
-<<<<<<< HEAD
-=======
     print("Loaded all .csv files")
     frame = pd.concat(array)
     
@@ -39,15 +34,12 @@ def example_one():
     # frame.index = frame.index.map(np.int64) #takto sa meni dtype indexu
 
     frame = frame.drop('id', axis=1)
->>>>>>> 1a288f3210871613e224df7bb3dacf78b0ce4ddc
 
     print("Loaded all .csv files")
     frame = pd.concat(array, ignore_index=True)
 
-<<<<<<< HEAD
     # frame['id'] = frame['id'].apply(np.int64) #takto sa meni dtype columnu
     # frame.index = frame.index.map(np.int64) #takto sa meni dtype indexu
-=======
 def read_all_data():
     frame = pd.read_csv("all.csv")
     frame.set_index('id', inplace=True) #aby pandas vedelo ze index ma brat z id
@@ -55,19 +47,15 @@ def read_all_data():
     frame.head()
 
     return frame
->>>>>>> 1a288f3210871613e224df7bb3dacf78b0ce4ddc
 
     frame = frame.drop('id', axis=1)
 
-<<<<<<< HEAD
     frame.to_csv("all2.csv", sep=',')
 
-=======
 def main():
     print("Starting")
     # example_one()
     frame = read_all_data()
->>>>>>> 1a288f3210871613e224df7bb3dacf78b0ce4ddc
 
 def read_all_data():
     frame = pd.read_csv("all2.csv")
