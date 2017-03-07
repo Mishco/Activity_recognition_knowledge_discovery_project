@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f354293f-7e22-472e-a4f4-0a383c8b6e72" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_threading.py" afterPath="$PROJECT_DIR$/python_threading.py" />
     </list>
     <ignored path="OZ_2.iws" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+            <state relative-caret-position="550">
+              <caret line="58" column="48" selection-start-line="18" selection-start-column="4" selection-end-line="58" selection-end-column="48" />
               <folding>
                 <element signature="e#16#35#0" expanded="true" />
               </folding>
@@ -38,9 +37,11 @@
       <file leaf-file-name="python_threading.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python_threading.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-44">
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -565,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        <state relative-caret-position="550">
+          <caret line="58" column="48" selection-start-line="18" selection-start-column="4" selection-end-line="58" selection-end-column="48" />
           <folding>
             <element signature="e#16#35#0" expanded="true" />
           </folding>
@@ -575,9 +576,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python_threading.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-44">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
