@@ -1,7 +1,6 @@
 import threading
 
 class SummingThread(threading.Thread):
-    """Studijna trieda na vlakna"""
      def __init__(self,low,high):
          super(SummingThread, self).__init__()
          self.low=low
