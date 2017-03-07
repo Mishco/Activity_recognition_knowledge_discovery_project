@@ -10,3 +10,14 @@ git log -p HEAD..origin
 
 --ukazuje iba diffy pre menene subory
 git diff HEAD...origin
+
+este 2 zaujimave nevyskusane veci:
+1.
+git diff origin/master
+
+2.
+--custom alias
+alias.changes=!git log --name-status HEAD..
+
+--pouzitie
+git changes origin
