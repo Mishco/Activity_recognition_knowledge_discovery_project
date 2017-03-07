@@ -1,0 +1,12 @@
+commands to do when fetching commits, you see new commits but dont wanna pull it, first you wanna check what is being changed:
+--cize najskor robime
+git fetch
+
+--toto ukazuje commity a ich messages
+git log HEAD..origin
+
+--toto ukazuje commity, ich messages, a diffy pre menene subory
+git log -p HEAD..origin
+
+--ukazuje iba diffy pre menene subory
+git diff HEAD...origin
