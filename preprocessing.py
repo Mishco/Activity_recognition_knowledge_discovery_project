@@ -1,14 +1,17 @@
 # preprocessing
 import pandas as pd
 import sys
+import numpy as np
 
 def main():
     """
     Metoda na pouzitie sliding window
     """
 
-    all_csv = pd.read_csv("all2.csv")
+    all_csv = pd.read_csv("all2.csv", dtype={'x':np.int16, 'y':np.int16, 'z':np.int16,'movement':np.int8, 'user':np.int8})
     #print(all_csv)
+    # print (all_csv.dtypes)
+    # return
 
     start = 0
     end = 99
@@ -16,11 +19,21 @@ def main():
     slidedataframe = pd.DataFrame()
     iteration=1
     mycolumns=[]
+    prev_movement=all_csv.ix[end,4]
+    prev_userid=all_csv.ix[end,5]
     while (all_csv.size-1 > end):
-        tmp = all_csv.ix[start:end,1:4]
         movement = all_csv.ix[end,4]
         userid = all_csv.ix[end,5]
+        if (prev_movement != movement) or (prev_userid != userid):
+            start=end
+            end=start+99
+            prev_movement=movement
+            prev_userid=userid
+            continue
+        tmp = all_csv.ix[start:end,1:4]
         tmp = tmp.stack().to_frame().T
+        prev_movement=movement
+        prev_userid=userid
 
         if iteration == 1:
             mycolumns=['{}_{}'.format(*c) for c in tmp.columns]
@@ -28,19 +41,22 @@ def main():
         tmp.columns = mycolumns
         # print (tmp.columns)
         tmp['movement'] = movement
-        tmp['userid'] = userid
+        tmp['user'] = userid
+        tmp[['movement','user']]=tmp[['movement','user']].astype(np.int8)
 
         slidedataframe = slidedataframe.append(tmp)
         start += 1
         end += 1
-        if (end == 100):
-        #if (end > 100 == 0):
-            # print(end)
-            print(slidedataframe)
-            break
+        # if end == 100:
+        #     print (slidedataframe.dtypes)
+        #     break
+        if (end % 1000 == 0):
+            print(end)
+            # print(slidedataframe)
+            # break
 
     # save to csv
-
+    slidedataframe.to_csv("sliding.csv",sep=',')
 
     #print(slidedataframe.shape)
 
