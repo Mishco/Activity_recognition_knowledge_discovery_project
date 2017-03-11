@@ -3,7 +3,7 @@ import pandas as pd
 import sys
 import numpy as np
 
-def main():
+def main(size):
 	"""
 	Metoda na pouzitie sliding window
 	"""
@@ -14,7 +14,8 @@ def main():
 	# return
 
 	start = 0
-	end = 99
+	index_increment=size+start-1
+	end = index_increment
 
 	slidedataframe = pd.DataFrame()
 	iteration=1
@@ -28,7 +29,7 @@ def main():
 		userid = all_csv.ix[end,5]
 		if (prev_movement != movement) or (prev_userid != userid):
 			start=end
-			end=start+99
+			end=start+index_increment
 			prev_movement=movement
 			prev_userid=userid
 			continue
@@ -69,4 +70,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    sliding_window_size=50
+    main(sliding_window_size)
